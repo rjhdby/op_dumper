@@ -1,0 +1,7 @@
+ARG_ENABLE('op_dumper', 'op_dumper support', 'no');
+
+if (PHP_OP_DUMPER != 'no') {
+	AC_DEFINE('HAVE_OP_DUMPER', 1, 'op_dumper support enabled');
+
+	EXTENSION('op_dumper', 'op_dumper.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
